@@ -2,10 +2,10 @@ const  express = require('express');
 const router = express.Router();
 
 //const express = require('express');
-const userController = require("../controllers/userController")
-const bookcontroller = require("../controllers/bookController")
-const middlewares = require("../middlewares/auth")
-const reviewController= require("../controllers/reviewController")
+const userController = require("../controller/userController")
+const bookcontroller = require("../controller/bookController")
+const middlewares = require("../middleware/middleware")
+const reviewController= require("../controller/reviewController")
 
 router.post("/register",userController.createUser )
 router.post("/login",userController.login )

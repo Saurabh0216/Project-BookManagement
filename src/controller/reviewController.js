@@ -1,6 +1,6 @@
-const booksModel = require("../models/booksModel");
-const reviewModel =require("../models/reviewModel")
-const validator = require("validator");
+const booksModel = require("../model/bookModel");
+const reviewModel =require("../model/reviewModel")
+
 const mongoose = require("mongoose")
 const isValid = function(value){
     if(typeof (value) === 'undefined' || value === null) return false

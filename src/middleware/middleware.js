@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const bookModel = require("../models/booksModel");
+const bookModel = require("../model/bookModel");
 
 ////---------///-authentication-----/////
 
