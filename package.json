@@ -1,0 +1,28 @@
+{
+  "name": "project3-booksmanagementgroup46",
+  "version": "1.0.0",
+  "description": "Project - Books Management\r Key points\r Create a group database groupXDatabase. You can clean the db you previously used and resue that.\r This time each group should have a single git branch. Coordinate amongst yourselves by ensuring every next person pulls the code last pushed by a team mate. You branch will be checked as part of the demo. Branch name should follow the naming convention project/booksManagementGroupX\r Follow the naming conventions exactly as instructed.\r Models\r User Model\r { \r   title: {string, mandatory, enum[Mr, Mrs, Miss]},\r   name: {string, mandatory},\r   phone: {string, mandatory, unique},\r   email: {string, mandatory, valid email, unique}, \r   password: {string, mandatory, minLen 8, maxLen 15},\r   address: {\r     street: {string},\r     city: {string},\r     pincode: {string}\r   },\r   createdAt: {timestamp},\r   updatedAt: {timestamp}\r }\r Books Model\r { \r   title: {string, mandatory, unique},\r   excerpt: {string, mandatory}, \r   userId: {ObjectId, mandatory, refs to user model},\r   ISBN: {string, mandatory, unique},\r   category: {string, mandatory},\r   subcategory: [string, mandatory],\r   reviews: {number, default: 0, comment: Holds number of reviews of this book},\r   deletedAt: {Date, when the document is deleted}, \r   isDeleted: {boolean, default: false},\r   releasedAt: {Date, mandatory, format(\"YYYY-MM-DD\")},\r   createdAt: {timestamp},\r   updatedAt: {timestamp},\r }\r Review Model (Books review)\r {\r   bookId: {ObjectId, mandatory, refs to book model},\r   reviewedBy: {string, mandatory, default 'Guest', value: reviewer's name},\r   reviewedAt: {Date, mandatory},\r   rating: {number, min 1, max 5, mandatory},\r   review: {string, optional}\r   isDeleted: {boolean, default: false},\r }",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saurabh0216/project3-booksManagementGroup46.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saurabh0216/project3-booksManagementGroup46/issues"
+  },
+  "homepage": "https://github.com/Saurabh0216/project3-booksManagementGroup46#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.3",
+    "nodemon": "^2.0.16",
+    "validator": "^13.7.0"
+  }
+}
